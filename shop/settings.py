@@ -11,9 +11,13 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+from os import path
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROJECT_DIR_PATH = path.dirname(path.normpath(path.abspath(__file__)))
+#MEDIA_ROOT = PROJECT_DIR_PATH + "/pictures"
+#MEDIA_URL = "/pictures/"
 
 
 # Quick-start development settings - unsuitable for production
@@ -26,11 +30,13 @@ SECRET_KEY = '1t0km&%emddg6pu9ph2df#v0b5@4#=i_$q+u(%*8@7c=q_1n7d'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+CORS_ORIGIN_ALLOW_ALL = True
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'store.apps.StoreConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -41,6 +47,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
