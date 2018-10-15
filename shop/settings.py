@@ -16,8 +16,8 @@ from os import path
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_DIR_PATH = path.dirname(path.normpath(path.abspath(__file__)))
-#MEDIA_ROOT = PROJECT_DIR_PATH + "/pictures"
-#MEDIA_URL = "/pictures/"
+# MEDIA_ROOT = PROJECT_DIR_PATH + "/pictures"
+# MEDIA_URL = "/pictures/"
 
 
 # Quick-start development settings - unsuitable for production
